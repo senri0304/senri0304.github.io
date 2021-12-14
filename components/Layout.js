@@ -3,8 +3,8 @@ import Link from "next/link"
 
 const Layout = (props) => {
   const { title, children } = props
-  const siteTitle = "後藤のブログ"
-
+  const siteTitle = "てれぐのーしす"
+  
   return (
     <div className="page">
       <Head>

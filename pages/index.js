@@ -9,10 +9,7 @@ export default function Home(props) {
   const { posts, hasArchive } = props
   return (
     <Layout title="">
-      {posts.map((post) => <div
-        key={post.slug}
-        className="post-teaser"
-      >
+      {posts.map((post) => <div key={post.slug} className="post-teaser">
         <h2><Link href="/posts/[id]" as={`/posts/${post.slug}`}><a>{post.title}</a></Link></h2>
         <div><span>{post.published}</span></div>
       </div>)}
