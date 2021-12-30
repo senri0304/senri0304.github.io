@@ -1,3 +1,10 @@
+/**
+ * このブログはGoto Hayatoの「Next.js を使った Jamstack なブログの始め方」を丸パクリして作られています。
+ * 感謝します。
+ * https://gotohayato.com/content/517/
+ */
+
+
 import fs from "fs"
 
 import Link from "next/link"
@@ -11,7 +18,7 @@ export default function Home(props) {
     <Layout title="">
       {posts.map((post) => <div key={post.slug} className="post-teaser">
         <h2><Link href="/posts/[id]" as={`/posts/${post.slug}`}><a>{post.title}</a></Link></h2>
-        <div><span>{post.published}</span></div>
+        <div><span className="pub">{post.published}</span></div>
       </div>)}
 
       {hasArchive ? (
@@ -26,7 +33,13 @@ export default function Home(props) {
         }
 
         .post-teaser h2 a {
-          text-decoration: none;
+          text-decoration: none
+        }
+
+        .pub {
+          margin-right: 10px;
+          color: red;
+          justify-content: right;
         }
 
         .home-archive {

@@ -2,7 +2,7 @@ import Head from "next/head"
 import Link from "next/link"
 
 const Layout = (props) => {
-  const { title, children } = props
+  const { title, children, posts } = props
   const siteTitle = "てれぐのーしす"
   
   return (
@@ -27,10 +27,15 @@ const Layout = (props) => {
         </div>
       </main>
 
-      <footer>
-        &copy; {siteTitle}
-      </footer>
+      <hr></hr>
 
+      <tw>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </tw>
+
+      <footer>
+        <div>Armeria</div>
+      </footer>
       <style jsx>{`
         .page {
           padding: 2em 1em;
@@ -52,12 +57,25 @@ const Layout = (props) => {
         }
 
         footer {
-          margin-top: 4em;
-          padding-top: 2em;
+          min-width: 800px;
+          margin: 0 auto;
+          padding: 0 20px;
+          color: gray;
+          font-size: 12px;
           padding-bottom: 2em;
           display: flex;
-          justify-content: center;
-          align-items: center;
+          justify-content: right;
+        }
+
+        tw {
+          min-width: 800px;
+          margin: 0 auto;
+          padding: 0 20px;
+          color: gray;
+          font-size: 12px;
+          padding-bottom: 1em;
+          display: flex;
+          justify-content: right;
         }
       `}</style>
 
@@ -68,7 +86,8 @@ const Layout = (props) => {
           margin: 0;
           font-family: 'Noto Sans JP', -apple-system, "Segoe UI", "Helvetica Neue",
             "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-          color: #222;
+          color: #696969;
+          background: #f0ffff; 
         }
 
         img,
@@ -79,6 +98,11 @@ const Layout = (props) => {
         h1, h2, h3, h4, h5, h6 {
           font-family: Montserrat, -apple-system, "Segoe UI", "Helvetica Neue",
             "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
+            color: #800000;
+        }
+
+        hr {
+          margin-top: 2em;
         }
 
         * {
@@ -90,3 +114,7 @@ const Layout = (props) => {
 }
 
 export default Layout
+
+/* 
+<a class="twitter-timeline" data-width="320" data-height="300" data-theme="dark" href="https://twitter.com/Armeria_s?ref_src=twsrc%5Etfw">Tweets by Armeria_s</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+*/
